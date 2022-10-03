@@ -37,7 +37,7 @@ Registrate
                 <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Nombre Usuario
 
                 </label>
-                <input id="username" name="username" type="text" placeholder="Nombre Usuario" class="border p-3 w-full rounded-lg @error('username) border-red-500
+                <input id="username" name="username" type="text" placeholder="Nombre Usuario" class="border p-3 w-full rounded-lg @error('username') border-red-500
 
                 @enderror" value="{{old('username')}}">
 
