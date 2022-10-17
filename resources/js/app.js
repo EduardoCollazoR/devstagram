@@ -10,3 +10,20 @@ const dropzone = new Dropzone('#dropzone', {
   maxFiles: 1,
   uploadMultiple: false
 });
+
+dropzone.on('sending', function(file, xhr, formData) {
+
+});
+
+
+dropzone.on('sucess', function(file, response) {
+
+})
+
+dropzone.on('error', function(file, message) {
+
+})
+
+dropzone.on('removedFile', function() {
+
+});
