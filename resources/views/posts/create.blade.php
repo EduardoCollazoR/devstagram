@@ -15,7 +15,7 @@ Crea una nueva publicacion
         <form id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center" action="{{ route('imagenes.store')}}" method="POST" enctype="multipart/form-data"></form>
     </div>
     <div class="md:w-1/2 p-10  bg-white rounded-lg shadow-xl mt-10 md:mt-0">
-        <form action="{{route('register')}}" method="POST">
+        <form action="{{route('posts.store')}}" method="POST">
             @csrf
             <div class="mb-5">
                 <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">Titulo
@@ -43,6 +43,16 @@ Crea una nueva publicacion
                 <p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2">{{$message}}</p>
 
                 @enderror
+            </div>
+
+            <div class="mb-5">
+                <input name="imagen" type="hidden" value="{{old('imagen')}}">
+
+                @error('imagen')
+                <p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2">{{$message}}</p>
+
+                @enderror
+
             </div>
             <input type="submit" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg" value="Crear Publicacion">
 
