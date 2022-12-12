@@ -33,7 +33,13 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
+
+//rutas para el perfil
+Route::get('/editar-perfil', [PerfilController::class, 'index'])->name('perfil.index');
+
+Route::post('/editar-perfil', [PerfilController::class, 'store'])->name('perfil.store');
+
+
 
 Route::post('/posts/create', [PostController::class, 'create'])->name('posts.create');
 
@@ -54,3 +60,5 @@ Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.sto
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store');
 
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
+
+Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
